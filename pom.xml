@@ -43,6 +43,7 @@
 
  <build>
     <plugins>
+   	  <!-- Para executar o projeto com o Tomcat. -->
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
