@@ -60,6 +60,44 @@
           <port>9090</port>
         </configuration>
       </plugin>
+      <!-- Para executar o banco de dados Derby pelo Maven. -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+          <execution>
+            <id>derby-start</id>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <includeProjectDependencies>false</includeProjectDependencies>
+              <includePluginDependencies>true</includePluginDependencies>
+              <workingDirectory>${basedir}</workingDirectory>
+              <mainClass>org.apache.derby.drda.NetworkServerControl</mainClass>
+              <arguments>
+                <argument>start</argument>
+                <argument>-p</argument>
+                <argument>1527</argument>
+                <argument>-noSecurityManager</argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derby</artifactId>
+            <version>${derby.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derbynet</artifactId>
+            <version>${derby.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
     </plugins>
   </build>
 
