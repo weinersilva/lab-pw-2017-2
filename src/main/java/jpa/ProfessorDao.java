@@ -12,6 +12,7 @@ import javax.persistence.TypedQuery;
  */
 public class ProfessorDao {
 
+	//"professores" é o nome da unidade de persistência no "persistence.xml".
 	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("professores");
 
 	public static void inclui(String matricula, String nome) {
@@ -37,6 +38,7 @@ public class ProfessorDao {
 
 	public static List<Professor> listar() {
 		EntityManager em = emf.createEntityManager();
+		//Não é SQL! É JPQL.
 		String jpql = "from Professor";
 		TypedQuery<Professor> query = em.createQuery(jpql, Professor.class);
 		List<Professor> result = query.getResultList();
