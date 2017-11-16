@@ -11,6 +11,16 @@ public class Professor {
 	
 	private String nome;
 
+	private String sobrenome;
+
+	public String getSobrenome() {
+		return sobrenome;
+	}
+
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+
 	public String getMatricula() {
 		return matricula;
 	}
