@@ -2,7 +2,7 @@
 
 Exemplo de microserviço com DDD.
 
-Esse projeto utiliza Maven, Java, JAX-RS, RestEasy, JPA, Hibernate, Tomcat e Derby.
+Esse projeto utiliza Maven, Java, JAX-RS, RESTEasy, JPA, Hibernate, Tomcat e Derby.
 
 ## Executando
 
