@@ -14,7 +14,7 @@
       <property name="hibernate.connection.driver_class"
         value="org.apache.derby.jdbc.ClientDriver"/>
       <property name="hibernate.connection.url"
-        value="jdbc:derby://localhost/pwdb;create=true"/>
+        value="jdbc:derby://localhost/db;create=true"/>
       <!-- Dialeto Hibernate para o Derby. -->
       <property name="hibernate.dialect"
         value="org.hibernate.dialect.DerbyDialect" />

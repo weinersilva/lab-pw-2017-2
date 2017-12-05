@@ -5,10 +5,10 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>ufg-inf-pw</groupId>
-  <artifactId>ufg-inf-pw-2017-2</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <!-- Projeto WEB -->
+  <groupId>weinersilva</groupId>
+  <artifactId>tacs-microservice-ddd</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <!-- Projeto WEB padrão. -->
   <packaging>war</packaging>
 
   <properties>
@@ -22,15 +22,12 @@
   </properties>
 
   <dependencies>
-    <!-- Para Servlet versão 3 -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.1.0</version>
-      <!-- Para não "empacotar" a biblioteca com a aplicação. O application server já possui essa biblioteca.  -->
       <scope>provided</scope>
     </dependency>
-    <!-- Para usar REST com JAX-RS e RestEasy. -->
     <dependency>
       <groupId>org.jboss.resteasy</groupId>
       <artifactId>resteasy-servlet-initializer</artifactId>
@@ -41,13 +38,11 @@
       <artifactId>resteasy-jackson-provider</artifactId>
       <version>${resteasy.version}</version>
     </dependency>
-    <!-- Para usar o driver do banco de dados Derby. -->
     <dependency>
       <groupId>org.apache.derby</groupId>
       <artifactId>derbyclient</artifactId>
       <version>${derby.version}</version>
     </dependency>
-    <!-- Para usar JPA com Hibernate. -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
@@ -57,16 +52,15 @@
 
   <build>
     <plugins>
-   	  <!-- Para executar o projeto com o Tomcat. -->
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
         <configuration>
           <port>9090</port>
+          <path>/</path>
         </configuration>
       </plugin>
-      <!-- Para executar o banco de dados Derby pelo Maven. -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
