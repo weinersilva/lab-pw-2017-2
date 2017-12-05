@@ -6,7 +6,7 @@ Esse projeto utiliza Maven, Java, JAX-RS, RestEasy, JPA, Hibernate, Tomcat e Der
 
 ## Executando
 
-Para executar o microserviço, suba o banco de dados Derby, o servidor de aplicações Tomcat e acesse `http://localhost:9090`.
+Para executar o microserviço, suba o banco de dados Derby, o servidor de aplicações Tomcat e acesse `http://localhost:9090`
 
 ### Banco de Dados - Derby
 
