@@ -1,19 +1,69 @@
 <html>
 <head>
-	<title>UFG-INF-PW-2017-2</title>
+<title>TACS Microservice DDD</title>
+<script src="../js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#listarProfessores").click(function(){
+    listarProfessores();
+  });
+  $("#salvarProfessor").click(function(){
+    salvarProfessor();
+  });
+  $("#excluirProfessor").click(function(){
+    excluirProfessor();
+  });
+});
+
+function listarProfessores() {
+  $.ajax({
+    type: 'get',
+    url: 'api/professores',
+    success: function(data, status) {
+      alert('Status: ' + status + "\nData: \n" + JSON.stringify(data));
+    }
+  });
+}
+
+function salvarProfessor() {
+  $.ajax({
+    type: 'post',
+    url: 'api/professores',
+    contentType: "application/json",
+    data: JSON.stringify({
+      matricula: $("#matricula").val(),
+      nome: $("#nome").val(),
+      sobrenome: $("#sobrenome").val()
+    }),
+    success: function(data, status) {
+      alert('Status: ' + status + "\nData: \n" + JSON.stringify(data));
+    }
+  });
+}
+
+function excluirProfessor() {
+  alert("Não implementado!");
+}
+</script>
 </head>
 <body>
-<h1>UFG-INF-PW-2017-2</h1>
-<h2>Menu</h2>
-<hr>
-<a href="jsp/maior-menor.jsp">Maior / Menor - JSP</a>
-<br>
-<a href="servlet/maior-menor-servlet">Maior / Menor - Servlet</a>
-<br>
-<a href="mvc/maior-menor-mvc">Maior / Menor - MVC</a>
-<br>
-<a href="rest/maior-menor-rest.html">Maior / Menor - REST</a>
-<br>
-<a href="jpa/professores">Professores - JPA</a>
+  <h1>TACS Microservice DDD</h1>
+  <hr>
+  <p>GET api/professores - Lista de professores</p>
+  <button id="listarProfessores" type="button">Listar</button>
+  <p>POST api/professores - Salvar Professor</p>
+  <input id="matricula" placeholder="Matrícula">
+  <br>
+  <input id="nome" placeholder="Nome">
+  <br>
+  <input id="sobrenome" placeholder="Sobrenome">
+  <br>
+  <br>
+  <button id="salvarProfessor" type="button">Salvar</button>
+  <p>DELETE api/professores/? - Excluir Professor</p>
+  <input id="matricula" placeholder="Matrícula">
+  <br>
+  <br>
+  <button id="excluirProfessor" type="button">Excluir</button>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package rest;
+package professor;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,7 +12,7 @@ public class JaxRsApplication extends Application {
 	private Set<Object> singletons = new HashSet<Object>();
 
 	public JaxRsApplication() {
-		singletons.add(new MaiorMenorRest());
+		singletons.add(new ProfessorRest());
 	}
 
 	@Override
